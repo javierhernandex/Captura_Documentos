@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hermesModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'hermes.dbo.Veeder_Carga' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Veeder_Carga">
+    <Key>
+      <PropertyRef Name="VE_ID" />
+      <PropertyRef Name="VE_TANQ" />
+    </Key>
+    <Property Name="VE_ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VE_TANQ" Type="int" Nullable="false" />
+    <Property Name="VE_NOM" Type="char" MaxLength="10" />
+    <Property Name="VE_LTRI" Type="float" />
+    <Property Name="VE_LTRF" Type="float" />
+    <Property Name="VE_AUM" Type="float" />
+    <Property Name="VE_TERM" Type="char" MaxLength="3" />
+    <Property Name="VE_TDOC" Type="char" MaxLength="2" />
+    <Property Name="VE_FDOC" Type="datetime" />
+    <Property Name="VE_FOLD" Type="char" MaxLength="10" />
+    <Property Name="VE_VDOC" Type="float" />
+    <Property Name="VE_HFI" Type="datetime" />
+    <Property Name="VE_GCI" Type="float" />
+    <Property Name="VE_HFF" Type="datetime" />
+    <Property Name="VE_GCF" Type="float" />
+    <Property Name="VE_ENVIO" Type="bit" />
+    <Property Name="VE_MODI" Type="bit" />
+    <Property Name="VE_DTAL" Type="float" />
+    <Property Name="VE_FGEN" Type="varchar" MaxLength="50" />
+    <Property Name="VE_FILE" Type="varchar" MaxLength="50" />
+    <Property Name="LitrosA" Type="real" />
+    <Property Name="VE_VALIDA" Type="int" />
+  </EntityType>
+  <EntityContainer Name="hermesModel1StoreContainer">
+    <EntitySet Name="Veeder_Carga" EntityType="Self.Veeder_Carga" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Veeder_Carga].[VE_ID] AS [VE_ID], 
+    [Veeder_Carga].[VE_TANQ] AS [VE_TANQ], 
+    [Veeder_Carga].[VE_NOM] AS [VE_NOM], 
+    [Veeder_Carga].[VE_LTRI] AS [VE_LTRI], 
+    [Veeder_Carga].[VE_LTRF] AS [VE_LTRF], 
+    [Veeder_Carga].[VE_AUM] AS [VE_AUM], 
+    [Veeder_Carga].[VE_TERM] AS [VE_TERM], 
+    [Veeder_Carga].[VE_TDOC] AS [VE_TDOC], 
+    [Veeder_Carga].[VE_FDOC] AS [VE_FDOC], 
+    [Veeder_Carga].[VE_FOLD] AS [VE_FOLD], 
+    [Veeder_Carga].[VE_VDOC] AS [VE_VDOC], 
+    [Veeder_Carga].[VE_HFI] AS [VE_HFI], 
+    [Veeder_Carga].[VE_GCI] AS [VE_GCI], 
+    [Veeder_Carga].[VE_HFF] AS [VE_HFF], 
+    [Veeder_Carga].[VE_GCF] AS [VE_GCF], 
+    [Veeder_Carga].[VE_ENVIO] AS [VE_ENVIO], 
+    [Veeder_Carga].[VE_MODI] AS [VE_MODI], 
+    [Veeder_Carga].[VE_DTAL] AS [VE_DTAL], 
+    [Veeder_Carga].[VE_FGEN] AS [VE_FGEN], 
+    [Veeder_Carga].[VE_FILE] AS [VE_FILE], 
+    [Veeder_Carga].[LitrosA] AS [LitrosA], 
+    [Veeder_Carga].[VE_VALIDA] AS [VE_VALIDA]
+    FROM [dbo].[Veeder_Carga] AS [Veeder_Carga]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

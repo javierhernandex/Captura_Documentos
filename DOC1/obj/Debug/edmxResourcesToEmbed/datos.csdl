@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hermesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Send_Carga">
+    <Key>
+      <PropertyRef Name="VE_ID" />
+    </Key>
+    <Property Name="VE_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VE_TANQ" Type="Int32" Nullable="false" />
+    <Property Name="VE_PROD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="VE_LTRI" Type="Double" />
+    <Property Name="VE_LTRF" Type="Double" />
+    <Property Name="VE_AUM" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="VE_GCF" Type="Double" />
+    <Property Name="VE_TERM" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="VE_TDOC" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="VE_FDOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VE_FOLD" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="VE_VDOC" Type="Double" />
+    <Property Name="VE_HFI" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="VE_VEHI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VE_TREG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="VE_FOLR" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="VE_NPIP" Type="Int32" />
+    <Property Name="VE_NDOC" Type="Int32" />
+    <Property Name="VE_ENVIO" Type="Boolean" />
+    <Property Name="VE_IDC" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="VE_PRDO" Type="DateTime" Precision="3" />
+    <Property Name="VE_MONTO" Type="Double" />
+    <Property Name="VE_RFC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VE_NUMCSGN" Type="Int32" Nullable="false" />
+    <Property Name="VE_PC" Type="Double" />
+    <Property Name="VE_PAD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VE_PERTRA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VE_NOMPROV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VE_PERPROV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VE_TP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VE_PI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VE_CLVPRO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="VE_CLVSUBPRO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="VE_COCGAS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="VE_GASETN" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="VE_CETNGAS" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="VE_OTROS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VE_MARCA" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="hermes" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Send_Carga" EntityType="Self.Send_Carga" />
+  </EntityContainer>
+</Schema>

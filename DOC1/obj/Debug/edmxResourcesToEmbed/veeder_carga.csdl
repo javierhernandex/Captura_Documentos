@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hermesModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Veeder_Carga">
+    <Key>
+      <PropertyRef Name="VE_ID" />
+      <PropertyRef Name="VE_TANQ" />
+    </Key>
+    <Property Name="VE_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VE_TANQ" Type="Int32" Nullable="false" />
+    <Property Name="VE_NOM" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="VE_LTRI" Type="Double" />
+    <Property Name="VE_LTRF" Type="Double" />
+    <Property Name="VE_AUM" Type="Double" />
+    <Property Name="VE_TERM" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="VE_TDOC" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="VE_FDOC" Type="DateTime" Precision="3" />
+    <Property Name="VE_FOLD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="VE_VDOC" Type="Double" />
+    <Property Name="VE_HFI" Type="DateTime" Precision="3" />
+    <Property Name="VE_GCI" Type="Double" />
+    <Property Name="VE_HFF" Type="DateTime" Precision="3" />
+    <Property Name="VE_GCF" Type="Double" />
+    <Property Name="VE_ENVIO" Type="Boolean" />
+    <Property Name="VE_MODI" Type="Boolean" />
+    <Property Name="VE_DTAL" Type="Double" />
+    <Property Name="VE_FGEN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VE_FILE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LitrosA" Type="Single" />
+    <Property Name="VE_VALIDA" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="hermes2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Veeder_Carga" EntityType="Self.Veeder_Carga" />
+  </EntityContainer>
+</Schema>

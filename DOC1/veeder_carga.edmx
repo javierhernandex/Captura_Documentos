@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="hermesModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'hermes.dbo.Veeder_Carga' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Veeder_Carga">
+          <Key>
+            <PropertyRef Name="VE_ID" />
+            <PropertyRef Name="VE_TANQ" />
+          </Key>
+          <Property Name="VE_ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VE_TANQ" Type="int" Nullable="false" />
+          <Property Name="VE_NOM" Type="char" MaxLength="10" />
+          <Property Name="VE_LTRI" Type="float" />
+          <Property Name="VE_LTRF" Type="float" />
+          <Property Name="VE_AUM" Type="float" />
+          <Property Name="VE_TERM" Type="char" MaxLength="3" />
+          <Property Name="VE_TDOC" Type="char" MaxLength="2" />
+          <Property Name="VE_FDOC" Type="datetime" />
+          <Property Name="VE_FOLD" Type="char" MaxLength="10" />
+          <Property Name="VE_VDOC" Type="float" />
+          <Property Name="VE_HFI" Type="datetime" />
+          <Property Name="VE_GCI" Type="float" />
+          <Property Name="VE_HFF" Type="datetime" />
+          <Property Name="VE_GCF" Type="float" />
+          <Property Name="VE_ENVIO" Type="bit" />
+          <Property Name="VE_MODI" Type="bit" />
+          <Property Name="VE_DTAL" Type="float" />
+          <Property Name="VE_FGEN" Type="varchar" MaxLength="50" />
+          <Property Name="VE_FILE" Type="varchar" MaxLength="50" />
+          <Property Name="LitrosA" Type="real" />
+          <Property Name="VE_VALIDA" Type="int" />
+        </EntityType>
+        <EntityContainer Name="hermesModel1StoreContainer">
+          <EntitySet Name="Veeder_Carga" EntityType="Self.Veeder_Carga" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Veeder_Carga].[VE_ID] AS [VE_ID], 
+    [Veeder_Carga].[VE_TANQ] AS [VE_TANQ], 
+    [Veeder_Carga].[VE_NOM] AS [VE_NOM], 
+    [Veeder_Carga].[VE_LTRI] AS [VE_LTRI], 
+    [Veeder_Carga].[VE_LTRF] AS [VE_LTRF], 
+    [Veeder_Carga].[VE_AUM] AS [VE_AUM], 
+    [Veeder_Carga].[VE_TERM] AS [VE_TERM], 
+    [Veeder_Carga].[VE_TDOC] AS [VE_TDOC], 
+    [Veeder_Carga].[VE_FDOC] AS [VE_FDOC], 
+    [Veeder_Carga].[VE_FOLD] AS [VE_FOLD], 
+    [Veeder_Carga].[VE_VDOC] AS [VE_VDOC], 
+    [Veeder_Carga].[VE_HFI] AS [VE_HFI], 
+    [Veeder_Carga].[VE_GCI] AS [VE_GCI], 
+    [Veeder_Carga].[VE_HFF] AS [VE_HFF], 
+    [Veeder_Carga].[VE_GCF] AS [VE_GCF], 
+    [Veeder_Carga].[VE_ENVIO] AS [VE_ENVIO], 
+    [Veeder_Carga].[VE_MODI] AS [VE_MODI], 
+    [Veeder_Carga].[VE_DTAL] AS [VE_DTAL], 
+    [Veeder_Carga].[VE_FGEN] AS [VE_FGEN], 
+    [Veeder_Carga].[VE_FILE] AS [VE_FILE], 
+    [Veeder_Carga].[LitrosA] AS [LitrosA], 
+    [Veeder_Carga].[VE_VALIDA] AS [VE_VALIDA]
+    FROM [dbo].[Veeder_Carga] AS [Veeder_Carga]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="hermesModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Veeder_Carga">
+          <Key>
+            <PropertyRef Name="VE_ID" />
+            <PropertyRef Name="VE_TANQ" />
+          </Key>
+          <Property Name="VE_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VE_TANQ" Type="Int32" Nullable="false" />
+          <Property Name="VE_NOM" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="VE_LTRI" Type="Double" />
+          <Property Name="VE_LTRF" Type="Double" />
+          <Property Name="VE_AUM" Type="Double" />
+          <Property Name="VE_TERM" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="VE_TDOC" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="VE_FDOC" Type="DateTime" Precision="3" />
+          <Property Name="VE_FOLD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="VE_VDOC" Type="Double" />
+          <Property Name="VE_HFI" Type="DateTime" Precision="3" />
+          <Property Name="VE_GCI" Type="Double" />
+          <Property Name="VE_HFF" Type="DateTime" Precision="3" />
+          <Property Name="VE_GCF" Type="Double" />
+          <Property Name="VE_ENVIO" Type="Boolean" />
+          <Property Name="VE_MODI" Type="Boolean" />
+          <Property Name="VE_DTAL" Type="Double" />
+          <Property Name="VE_FGEN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VE_FILE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LitrosA" Type="Single" />
+          <Property Name="VE_VALIDA" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="hermes2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Veeder_Carga" EntityType="Self.Veeder_Carga" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="hermesModel1StoreContainer" CdmEntityContainer="hermes2">
+          <EntitySetMapping Name="Veeder_Carga">
+            <EntityTypeMapping TypeName="hermesModel1.Veeder_Carga">
+              <MappingFragment StoreEntitySet="Veeder_Carga">
+                <ScalarProperty Name="VE_ID" ColumnName="VE_ID" />
+                <ScalarProperty Name="VE_TANQ" ColumnName="VE_TANQ" />
+                <ScalarProperty Name="VE_NOM" ColumnName="VE_NOM" />
+                <ScalarProperty Name="VE_LTRI" ColumnName="VE_LTRI" />
+                <ScalarProperty Name="VE_LTRF" ColumnName="VE_LTRF" />
+                <ScalarProperty Name="VE_AUM" ColumnName="VE_AUM" />
+                <ScalarProperty Name="VE_TERM" ColumnName="VE_TERM" />
+                <ScalarProperty Name="VE_TDOC" ColumnName="VE_TDOC" />
+                <ScalarProperty Name="VE_FDOC" ColumnName="VE_FDOC" />
+                <ScalarProperty Name="VE_FOLD" ColumnName="VE_FOLD" />
+                <ScalarProperty Name="VE_VDOC" ColumnName="VE_VDOC" />
+                <ScalarProperty Name="VE_HFI" ColumnName="VE_HFI" />
+                <ScalarProperty Name="VE_GCI" ColumnName="VE_GCI" />
+                <ScalarProperty Name="VE_HFF" ColumnName="VE_HFF" />
+                <ScalarProperty Name="VE_GCF" ColumnName="VE_GCF" />
+                <ScalarProperty Name="VE_ENVIO" ColumnName="VE_ENVIO" />
+                <ScalarProperty Name="VE_MODI" ColumnName="VE_MODI" />
+                <ScalarProperty Name="VE_DTAL" ColumnName="VE_DTAL" />
+                <ScalarProperty Name="VE_FGEN" ColumnName="VE_FGEN" />
+                <ScalarProperty Name="VE_FILE" ColumnName="VE_FILE" />
+                <ScalarProperty Name="LitrosA" ColumnName="LitrosA" />
+                <ScalarProperty Name="VE_VALIDA" ColumnName="VE_VALIDA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

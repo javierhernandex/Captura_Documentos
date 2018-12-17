@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="hermesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Send_Carga">
+          <Key>
+            <PropertyRef Name="VE_ID" />
+          </Key>
+          <Property Name="VE_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VE_TANQ" Type="int" Nullable="false" />
+          <Property Name="VE_PROD" Type="char" MaxLength="10" />
+          <Property Name="VE_LTRI" Type="float" />
+          <Property Name="VE_LTRF" Type="float" />
+          <Property Name="VE_AUM" Type="char" MaxLength="10" />
+          <Property Name="VE_GCF" Type="float" />
+          <Property Name="VE_TERM" Type="char" MaxLength="3" />
+          <Property Name="VE_TDOC" Type="char" MaxLength="2" />
+          <Property Name="VE_FDOC" Type="varchar" MaxLength="10" />
+          <Property Name="VE_FOLD" Type="char" MaxLength="8" />
+          <Property Name="VE_VDOC" Type="float" />
+          <Property Name="VE_HFI" Type="varchar" MaxLength="25" />
+          <Property Name="VE_VEHI" Type="varchar" MaxLength="10" />
+          <Property Name="VE_TREG" Type="char" MaxLength="2" />
+          <Property Name="VE_FOLR" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="VE_NPIP" Type="int" />
+          <Property Name="VE_NDOC" Type="int" />
+          <Property Name="VE_ENVIO" Type="bit" />
+          <Property Name="VE_IDC" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="VE_PRDO" Type="datetime" />
+          <Property Name="VE_MONTO" Type="float" />
+          <Property Name="VE_RFC" Type="varchar" MaxLength="50" />
+          <Property Name="VE_NUMCSGN" Type="int" Nullable="false" />
+          <Property Name="VE_PC" Type="float" />
+          <Property Name="VE_PAD" Type="nvarchar" MaxLength="20" />
+          <Property Name="VE_PERTRA" Type="nvarchar" MaxLength="20" />
+          <Property Name="VE_NOMPROV" Type="nvarchar" MaxLength="100" />
+          <Property Name="VE_PERPROV" Type="nvarchar" MaxLength="20" />
+          <Property Name="VE_TP" Type="nvarchar" MaxLength="20" />
+          <Property Name="VE_PI" Type="nvarchar" MaxLength="20" />
+          <Property Name="VE_CLVPRO" Type="nvarchar" MaxLength="2" />
+          <Property Name="VE_CLVSUBPRO" Type="nvarchar" MaxLength="1" />
+          <Property Name="VE_COCGAS" Type="nvarchar" MaxLength="2" />
+          <Property Name="VE_GASETN" Type="nvarchar" MaxLength="2" />
+          <Property Name="VE_CETNGAS" Type="nvarchar" MaxLength="5" />
+          <Property Name="VE_OTROS" Type="nvarchar" MaxLength="20" />
+          <Property Name="VE_MARCA" Type="nvarchar" MaxLength="3" />
+        </EntityType>
+        <EntityContainer Name="hermesModelStoreContainer">
+          <EntitySet Name="Send_Carga" EntityType="Self.Send_Carga" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="hermesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Send_Carga">
+          <Key>
+            <PropertyRef Name="VE_ID" />
+          </Key>
+          <Property Name="VE_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VE_TANQ" Type="Int32" Nullable="false" />
+          <Property Name="VE_PROD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="VE_LTRI" Type="Double" />
+          <Property Name="VE_LTRF" Type="Double" />
+          <Property Name="VE_AUM" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="VE_GCF" Type="Double" />
+          <Property Name="VE_TERM" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="VE_TDOC" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="VE_FDOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="VE_FOLD" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="VE_VDOC" Type="Double" />
+          <Property Name="VE_HFI" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="VE_VEHI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="VE_TREG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="VE_FOLR" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="VE_NPIP" Type="Int32" />
+          <Property Name="VE_NDOC" Type="Int32" />
+          <Property Name="VE_ENVIO" Type="Boolean" />
+          <Property Name="VE_IDC" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="VE_PRDO" Type="DateTime" Precision="3" />
+          <Property Name="VE_MONTO" Type="Double" />
+          <Property Name="VE_RFC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VE_NUMCSGN" Type="Int32" Nullable="false" />
+          <Property Name="VE_PC" Type="Double" />
+          <Property Name="VE_PAD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VE_PERTRA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VE_NOMPROV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VE_PERPROV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VE_TP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VE_PI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VE_CLVPRO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="VE_CLVSUBPRO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="VE_COCGAS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="VE_GASETN" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="VE_CETNGAS" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="VE_OTROS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VE_MARCA" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="hermes" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Send_Carga" EntityType="Self.Send_Carga" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="hermesModelStoreContainer" CdmEntityContainer="hermes">
+          <EntitySetMapping Name="Send_Carga">
+            <EntityTypeMapping TypeName="hermesModel.Send_Carga">
+              <MappingFragment StoreEntitySet="Send_Carga">
+                <ScalarProperty Name="VE_ID" ColumnName="VE_ID" />
+                <ScalarProperty Name="VE_TANQ" ColumnName="VE_TANQ" />
+                <ScalarProperty Name="VE_PROD" ColumnName="VE_PROD" />
+                <ScalarProperty Name="VE_LTRI" ColumnName="VE_LTRI" />
+                <ScalarProperty Name="VE_LTRF" ColumnName="VE_LTRF" />
+                <ScalarProperty Name="VE_AUM" ColumnName="VE_AUM" />
+                <ScalarProperty Name="VE_GCF" ColumnName="VE_GCF" />
+                <ScalarProperty Name="VE_TERM" ColumnName="VE_TERM" />
+                <ScalarProperty Name="VE_TDOC" ColumnName="VE_TDOC" />
+                <ScalarProperty Name="VE_FDOC" ColumnName="VE_FDOC" />
+                <ScalarProperty Name="VE_FOLD" ColumnName="VE_FOLD" />
+                <ScalarProperty Name="VE_VDOC" ColumnName="VE_VDOC" />
+                <ScalarProperty Name="VE_HFI" ColumnName="VE_HFI" />
+                <ScalarProperty Name="VE_VEHI" ColumnName="VE_VEHI" />
+                <ScalarProperty Name="VE_TREG" ColumnName="VE_TREG" />
+                <ScalarProperty Name="VE_FOLR" ColumnName="VE_FOLR" />
+                <ScalarProperty Name="VE_NPIP" ColumnName="VE_NPIP" />
+                <ScalarProperty Name="VE_NDOC" ColumnName="VE_NDOC" />
+                <ScalarProperty Name="VE_ENVIO" ColumnName="VE_ENVIO" />
+                <ScalarProperty Name="VE_IDC" ColumnName="VE_IDC" />
+                <ScalarProperty Name="VE_PRDO" ColumnName="VE_PRDO" />
+                <ScalarProperty Name="VE_MONTO" ColumnName="VE_MONTO" />
+                <ScalarProperty Name="VE_RFC" ColumnName="VE_RFC" />
+                <ScalarProperty Name="VE_NUMCSGN" ColumnName="VE_NUMCSGN" />
+                <ScalarProperty Name="VE_PC" ColumnName="VE_PC" />
+                <ScalarProperty Name="VE_PAD" ColumnName="VE_PAD" />
+                <ScalarProperty Name="VE_PERTRA" ColumnName="VE_PERTRA" />
+                <ScalarProperty Name="VE_NOMPROV" ColumnName="VE_NOMPROV" />
+                <ScalarProperty Name="VE_PERPROV" ColumnName="VE_PERPROV" />
+                <ScalarProperty Name="VE_TP" ColumnName="VE_TP" />
+                <ScalarProperty Name="VE_PI" ColumnName="VE_PI" />
+                <ScalarProperty Name="VE_CLVPRO" ColumnName="VE_CLVPRO" />
+                <ScalarProperty Name="VE_CLVSUBPRO" ColumnName="VE_CLVSUBPRO" />
+                <ScalarProperty Name="VE_COCGAS" ColumnName="VE_COCGAS" />
+                <ScalarProperty Name="VE_GASETN" ColumnName="VE_GASETN" />
+                <ScalarProperty Name="VE_CETNGAS" ColumnName="VE_CETNGAS" />
+                <ScalarProperty Name="VE_OTROS" ColumnName="VE_OTROS" />
+                <ScalarProperty Name="VE_MARCA" ColumnName="VE_MARCA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,453 @@
+﻿
+@model DOC1.Send_Carga
+
+@{
+
+    var lstvalores = new List<SelectListItem>();
+
+
+    lstvalores.Add(new SelectListItem() { Value = "", Text = "Seleccionar".ToString() });
+    lstvalores.Add(new SelectListItem() { Value = "RP".ToString(), Text = "RP".ToString() });
+    lstvalores.Add(new SelectListItem() { Value = "CP".ToString(), Text = "CP".ToString() });
+    lstvalores.Add(new SelectListItem() { Value = "PC".ToString(), Text = "PC".ToString() });
+
+    var proveedor = new List<SelectListItem>();
+    proveedor.Add(new SelectListItem() { Value = "", Text = "Seleccionar".ToString() });
+    proveedor.Add(new SelectListItem() { Value = "Nacional".ToString(), Text = "Nacional".ToString() });
+    proveedor.Add(new SelectListItem() { Value = "Nacional".ToString(), Text = "Extrangero".ToString() });
+
+
+    var c_pro = new List<SelectListItem>();
+    c_pro.Add(new SelectListItem() { Value = "", Text = "Seleccionar".ToString() });
+    c_pro.Add(new SelectListItem() { Value = "07", Text = "07 - Gasolina".ToString() });
+
+    var cs_pro = new List<SelectListItem>();
+    cs_pro.Add(new SelectListItem() { Value = "", Text = "Seleccionar".ToString() });
+    cs_pro.Add(new SelectListItem() { Value = "1", Text = "87 Octanos".ToString() });
+    cs_pro.Add(new SelectListItem() { Value = "2", Text = "92 Octanos".ToString() });
+
+    var og = new List<SelectListItem>();
+    og.Add(new SelectListItem() { Value = "", Text = "Seleccionar".ToString() });
+    og.Add(new SelectListItem() { Value = "87", Text = "87".ToString() });
+    og.Add(new SelectListItem() { Value = "92", Text = "97".ToString() });
+
+    var gce = new List<SelectListItem>();
+    gce.Add(new SelectListItem() { Value = "", Text = "Seleccionar".ToString() });
+    gce.Add(new SelectListItem() { Value = "Si", Text = "Si".ToString() });
+    gce.Add(new SelectListItem() { Value = "No", Text = "No".ToString() });
+
+
+}
+
+
+
+
+<style>
+    #mdialTamanio {
+        width: 85% !important;
+    }
+</style>
+
+
+
+
+
+
+<div class="modal fade" id="DD" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static"
+         data-keyboard="false">
+        <div class="modal-dialog  " id="mdialTamanio">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Registro</h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <form id="loginform" class="form-horizontal" role="form" method="post">
+
+
+       @using (Html.BeginForm())
+       {
+        @Html.AntiForgeryToken()
+
+
+                        <div class="form-horizontal">
+
+                         
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+
+                            <div class="form-group">
+                                <div class="col-md-3">
+
+                                    @Html.LabelFor(m => m.VE_TERM, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_TERM, new { htmlAttributes = new { @class = "form-control", placeholder = "T.A.D.E." } })
+                                    @Html.ValidationMessageFor(model => model.VE_TERM, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    @Html.LabelFor(m => m.VE_PAD, htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_PAD, new { htmlAttributes = new { @class = "form-control", placeholder = "Permiso T.A.D.E." } })
+                                    @Html.ValidationMessageFor(model => model.VE_PAD, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_FDOC, htmlAttributes: new { @class = "control-label" })
+                                    <div>
+                                        @Html.EditorFor(model => model.VE_FDOC, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.VE_FDOC, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_TDOC, new { @class = "control-label" })
+                                    @Html.DropDownListFor(m => m.VE_TDOC, lstvalores, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.VE_TDOC, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_FOLR, new { @class = "control-label" })
+
+                                    @Html.EditorFor(m => m.VE_FOLR, new { htmlAttributes = new { @class = "form-control", placeholder = "Folio Recepcion" } })
+                                    @Html.ValidationMessageFor(model => model.VE_FOLR, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_FOLD, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_FOLD, new { htmlAttributes = new { @class = "form-control", placeholder = "Folio Documento Recepcion" } })
+                                    @Html.ValidationMessageFor(model => model.VE_FOLD, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_TP, new { @class = "control-label" })
+                                    @Html.DropDownListFor(m => m.VE_TP, proveedor, new { @class = "form-control", placeholder = "Folio Recepcion" })
+                                    @Html.ValidationMessageFor(model => model.VE_TP, "", new { @class = "text-danger" })
+                                </div>
+
+
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_MONTO, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_MONTO, new { htmlAttributes = new { @class = "form-control", placeholder = "Importe en pesos" } })
+                                    @Html.ValidationMessageFor(model => model.VE_MONTO, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 ">
+                                    @Html.LabelFor(m => m.VE_PERTRA, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_PERTRA, new { htmlAttributes = new { @class = "form-control", placeholder = "Permiso Transporte" } })
+                                    @Html.ValidationMessageFor(model => model.VE_PERTRA, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_VEHI, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_VEHI, new { htmlAttributes = new { @class = "form-control", placeholder = "Clave Vehiculo" } })
+                                    @Html.ValidationMessageFor(model => model.VE_VEHI, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_NOMPROV, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_NOMPROV, new { htmlAttributes = new { @class = "form-control", placeholder = "Nombre Proveedor" } })
+                                    @Html.ValidationMessageFor(model => model.VE_NOMPROV, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_RFC, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_RFC, new { htmlAttributes = new { @class = "form-control", placeholder = "R.F.C Proveedor" } })
+                                    @Html.ValidationMessageFor(model => model.VE_RFC, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_PERPROV, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_PERPROV, new { htmlAttributes = new { @class = "form-control", placeholder = "Permiso Proveedor" } })
+                                    @Html.ValidationMessageFor(model => model.VE_PERPROV, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_PC, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_PC, new { htmlAttributes = new { @class = "form-control", placeholder = "Precio Compra" } })
+                                    @Html.ValidationMessageFor(model => model.VE_PC, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-3" >
+                                    
+                                     @Html.HiddenFor(m=>m.id_list,new { @id="resultado"})
+                                </div>
+                                
+
+                            </div>
+
+                            <hr />
+                            <div class="form-group">
+                                <div class="col-md-offset-7 col-md-3">
+                                    @Html.LabelFor(modal => modal.VE_VDOC, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_VDOC, new { htmlAttributes = new { @class = "form-control", placeholder = "Documentado" } })
+                                    @Html.ValidationMessageFor(model => model.VE_VDOC, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                       
+
+                            <div class="form-group">
+                                <div class="col-md-offset-7 col-md-10">
+                                    
+                                    <input type="submit" id="documentar" value="Documentar" class="btn btn-primary" />
+                                    <input type="reset" class="btn btn-warning" value="Limpiar" />
+                                    <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Cancelar</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+<div class="modal fade" id="MA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static"
+     data-keyboard="false">
+    <div class="modal-dialog  " id="mdialTamanio">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Registro</h4>
+            </div>
+
+            <div class="modal-body">
+
+                <form id="loginform" class="form-horizontal" role="form" method="post">
+
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+
+                        <div class="form-horizontal">
+
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+
+                            <div class="form-group">
+                                <div class="col-md-3">
+
+                                    @Html.LabelFor(m => m.VE_PROD, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_PROD, new { htmlAttributes = new { @class = "form-control", placeholder = "P" } })
+                                    @Html.ValidationMessageFor(model => model.VE_PROD, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    @Html.LabelFor(m => m.VE_CLVPRO, htmlAttributes: new { @class = "control-label" })
+                                    @Html.DropDownListFor(m => m.VE_CLVPRO,c_pro,new { @class = "form-control"  })
+                                    @Html.ValidationMessageFor(model => model.VE_CLVPRO, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="col-md-3">
+                                        @Html.LabelFor(m => m.VE_CLVSUBPRO, htmlAttributes: new { @class = "control-label" })
+                                 
+                                        @Html.DropDownListFor(model => model.VE_CLVSUBPRO,cs_pro, new { @class = "form-control"  })
+                                        @Html.ValidationMessageFor(model => model.VE_CLVSUBPRO, "", new { @class = "text-danger" })
+                                    
+                                </div>
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_COCGAS, new { @class = "control-label" })
+                                    @Html.DropDownListFor(m => m.VE_COCGAS,og, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.VE_COCGAS, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_CETNGAS, new { @class = "control-label" })
+
+                                    @Html.DropDownListFor(m => m.VE_CETNGAS,gce,  new { @class = "form-control", placeholder = "Folio Recepcion"  })
+                                    @Html.ValidationMessageFor(model => model.VE_CETNGAS, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-md-3">
+                                    @Html.LabelFor(m => m.VE_MARCA, new { @class = "control-label" })
+                                    @Html.EditorFor(m => m.VE_MARCA, new { htmlAttributes = new { @class = "form-control", placeholder = "Folio Documento Recepcion" } })
+                                    @Html.ValidationMessageFor(model => model.VE_MARCA, "", new { @class = "text-danger" })
+                                </div>
+                                
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-9 ">
+
+                                    <input type="submit" id="documentar" value="Documentar" class="btn btn-primary" />
+                                    <input type="reset" class="btn btn-warning" value="Limpiar" />
+                                    <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Cancelar</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                        <div class="col-md-10 col-lg-offset-10">
+
+
+      <input type="button" id="ddmodal" class="btn btn-success"  value="Documentar">   
+                                          
+                       
+
+ 
+                        </div>
+
+
+
+  <style>
+    #Tamanio {
+        width: 20% !important;
+    }
+    #mtamaño{
+        width: 25% !important;
+    }
+</style>
+
+<div class="modal fade" id="error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static"
+     data-keyboard="false">
+    <div class="modal-dialog " id="Tamanio">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="myModalLabel">No hay pipas por capturar!</h4>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="col-lg-offset-4">
+
+                    <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Aceptar</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static"
+     data-keyboard="false">
+    <div class="modal-dialog " id="Tamanio">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="myModalLabel">No has seleccionado pipa!!</h4>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="col-lg-offset-4">
+
+                    <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Aceptar</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>            
+
+
+<div class="modal fade" id="errorma" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static"
+     data-keyboard="false">
+    <div class="modal-dialog " id="mtamaño">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">No se ha capturado Cabecera</h4>
+            </div>
+
+            <div class="modal-body">
+                <div>
+                    <p class="text-center">¿Desea Capturar Cabecera?</p>
+                </div>
+
+
+                <form id="loginform" class="form-horizontal" role="form" method="post">
+
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+
+                        <div class="form-horizontal">
+
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+
+                            <div class="form-group">
+                               
+
+                            </div>
+
+                            <div class="form-group">
+                                
+                            </div>
+
+                            <div class="form-group">
+                               
+                            </div>
+                        </div>
+                    }
+
+                </form>
+
+
+
+
+
+                <div class="col-lg-offset-3">
+                    <input type="button" id="cma" class="btn btn-success" value="Aceptar">
+                    <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Cancelar</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>          

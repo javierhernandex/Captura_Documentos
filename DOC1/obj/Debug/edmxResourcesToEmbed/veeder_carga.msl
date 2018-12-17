@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="hermesModel1StoreContainer" CdmEntityContainer="hermes2">
+    <EntitySetMapping Name="Veeder_Carga">
+      <EntityTypeMapping TypeName="hermesModel1.Veeder_Carga">
+        <MappingFragment StoreEntitySet="Veeder_Carga">
+          <ScalarProperty Name="VE_ID" ColumnName="VE_ID" />
+          <ScalarProperty Name="VE_TANQ" ColumnName="VE_TANQ" />
+          <ScalarProperty Name="VE_NOM" ColumnName="VE_NOM" />
+          <ScalarProperty Name="VE_LTRI" ColumnName="VE_LTRI" />
+          <ScalarProperty Name="VE_LTRF" ColumnName="VE_LTRF" />
+          <ScalarProperty Name="VE_AUM" ColumnName="VE_AUM" />
+          <ScalarProperty Name="VE_TERM" ColumnName="VE_TERM" />
+          <ScalarProperty Name="VE_TDOC" ColumnName="VE_TDOC" />
+          <ScalarProperty Name="VE_FDOC" ColumnName="VE_FDOC" />
+          <ScalarProperty Name="VE_FOLD" ColumnName="VE_FOLD" />
+          <ScalarProperty Name="VE_VDOC" ColumnName="VE_VDOC" />
+          <ScalarProperty Name="VE_HFI" ColumnName="VE_HFI" />
+          <ScalarProperty Name="VE_GCI" ColumnName="VE_GCI" />
+          <ScalarProperty Name="VE_HFF" ColumnName="VE_HFF" />
+          <ScalarProperty Name="VE_GCF" ColumnName="VE_GCF" />
+          <ScalarProperty Name="VE_ENVIO" ColumnName="VE_ENVIO" />
+          <ScalarProperty Name="VE_MODI" ColumnName="VE_MODI" />
+          <ScalarProperty Name="VE_DTAL" ColumnName="VE_DTAL" />
+          <ScalarProperty Name="VE_FGEN" ColumnName="VE_FGEN" />
+          <ScalarProperty Name="VE_FILE" ColumnName="VE_FILE" />
+          <ScalarProperty Name="LitrosA" ColumnName="LitrosA" />
+          <ScalarProperty Name="VE_VALIDA" ColumnName="VE_VALIDA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

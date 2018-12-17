@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hermesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Send_Carga">
+    <Key>
+      <PropertyRef Name="VE_ID" />
+    </Key>
+    <Property Name="VE_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VE_TANQ" Type="int" Nullable="false" />
+    <Property Name="VE_PROD" Type="char" MaxLength="10" />
+    <Property Name="VE_LTRI" Type="float" />
+    <Property Name="VE_LTRF" Type="float" />
+    <Property Name="VE_AUM" Type="char" MaxLength="10" />
+    <Property Name="VE_GCF" Type="float" />
+    <Property Name="VE_TERM" Type="char" MaxLength="3" />
+    <Property Name="VE_TDOC" Type="char" MaxLength="2" />
+    <Property Name="VE_FDOC" Type="varchar" MaxLength="10" />
+    <Property Name="VE_FOLD" Type="char" MaxLength="8" />
+    <Property Name="VE_VDOC" Type="float" />
+    <Property Name="VE_HFI" Type="varchar" MaxLength="25" />
+    <Property Name="VE_VEHI" Type="varchar" MaxLength="10" />
+    <Property Name="VE_TREG" Type="char" MaxLength="2" />
+    <Property Name="VE_FOLR" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="VE_NPIP" Type="int" />
+    <Property Name="VE_NDOC" Type="int" />
+    <Property Name="VE_ENVIO" Type="bit" />
+    <Property Name="VE_IDC" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="VE_PRDO" Type="datetime" />
+    <Property Name="VE_MONTO" Type="float" />
+    <Property Name="VE_RFC" Type="varchar" MaxLength="50" />
+    <Property Name="VE_NUMCSGN" Type="int" Nullable="false" />
+    <Property Name="VE_PC" Type="float" />
+    <Property Name="VE_PAD" Type="nvarchar" MaxLength="20" />
+    <Property Name="VE_PERTRA" Type="nvarchar" MaxLength="20" />
+    <Property Name="VE_NOMPROV" Type="nvarchar" MaxLength="100" />
+    <Property Name="VE_PERPROV" Type="nvarchar" MaxLength="20" />
+    <Property Name="VE_TP" Type="nvarchar" MaxLength="20" />
+    <Property Name="VE_PI" Type="nvarchar" MaxLength="20" />
+    <Property Name="VE_CLVPRO" Type="nvarchar" MaxLength="2" />
+    <Property Name="VE_CLVSUBPRO" Type="nvarchar" MaxLength="1" />
+    <Property Name="VE_COCGAS" Type="nvarchar" MaxLength="2" />
+    <Property Name="VE_GASETN" Type="nvarchar" MaxLength="2" />
+    <Property Name="VE_CETNGAS" Type="nvarchar" MaxLength="5" />
+    <Property Name="VE_OTROS" Type="nvarchar" MaxLength="20" />
+    <Property Name="VE_MARCA" Type="nvarchar" MaxLength="3" />
+  </EntityType>
+  <EntityContainer Name="hermesModelStoreContainer">
+    <EntitySet Name="Send_Carga" EntityType="Self.Send_Carga" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
