@@ -100,9 +100,19 @@
                     
                     </div>
                    
-                        @Html.HiddenFor(mdoelItem => item.DATO, new { @id = "existe" })
+                        @Html.HiddenFor(modelItem => item.DATO, new { @id = "existe" })
 
-                   
+                        @Html.HiddenFor(modelItem => item.VE_HFI,new {@id="VE_HFI"})
+
+                        @Html.HiddenFor(modelItem => item.VE_HFF,new {@id="VE_HFF" })
+                        @Html.HiddenFor(modelItem => item.VE_LTRI,new {@id="VE_LTRI" })
+                        @Html.HiddenFor(modelItem => item.VE_LTRF, new {@id = "VE_LTRF"})
+                        @Html.HiddenFor(modelItem => item.VE_TANQ,new {@id ="VE_TANQ" })
+                        @Html.HiddenFor(modelItem => item.VE_AUM, new {@id= "VE_AUM" })
+                        
+
+
+
 
 
                 </a>
@@ -117,7 +127,7 @@
 
 
 
-        <div id="xx">
+        <div id="nom">
 
         </div>
 

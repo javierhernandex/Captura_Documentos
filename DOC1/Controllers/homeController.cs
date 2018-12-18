@@ -63,14 +63,17 @@ namespace DOC1.Controllers
                     VE_ID =Convert.ToInt32( tabla[nte].Rows[i]["VE_ID"]),
                    VE_NOM = tabla[nte].Rows[i]["VE_NOM"].ToString(),
                 VE_TANQ = Convert.ToInt32(tabla[nte].Rows[i]["VE_TANQ"]),
-                VE_AUM= Convert.ToUInt32( tabla[nte].Rows[i]["VE_AUM"]),
+                VE_LTRI= Convert.ToInt32(tabla[nte].Rows[i]["VE_LTRI"]),
+                VE_LTRF=Convert.ToInt32(tabla[nte].Rows[i]["VE_LTRF"]),
+                VE_GCF=Convert.ToInt32(tabla[nte].Rows[i]["VE_GCF"]),
+                VE_AUM = Convert.ToUInt32( tabla[nte].Rows[i]["VE_AUM"]),
                 VE_HFI= Convert.ToDateTime(tabla[nte].Rows[i]["VE_HFI"]),
-               DATO= Convert.ToInt32(tabla[1].Rows[0]["DATO"])
+               DATO= Convert.ToInt32(tabla[1].Rows[0]["DATO"]),
+               
 
             };
                 
-               
-
+  
             }
 
            
@@ -78,9 +81,6 @@ namespace DOC1.Controllers
             int nt = 2;
             int x = tabla[nt].Rows.Count;
             Send_Carga[] send = new Send_Carga[x];
-
-
-
 
             for (int ii = 0; ii < x; ii++)
             {
@@ -123,14 +123,10 @@ namespace DOC1.Controllers
         return View(send_Carga);
         }
 
-       
- 
+    
 
         public ActionResult modal()
         {
-
-
-
             return  View();
         }
        

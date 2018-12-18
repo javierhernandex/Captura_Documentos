@@ -178,7 +178,8 @@
                                 <div class="col-md-3" >
                                     
                                      @Html.HiddenFor(m=>m.id_list,new { @id="resultado"})
-                                </div>
+
+                                  </div>
                                 
 
                             </div>
@@ -403,51 +404,32 @@
                 <div>
                     <p class="text-center">¿Desea Capturar Cabecera?</p>
                 </div>
-
-
-                <form id="loginform" class="form-horizontal" role="form" method="post">
-
-
+                <form id="loginformm" class="form-horizontal" role="form" method="post">
                     @using (Html.BeginForm())
                     {
                         @Html.AntiForgeryToken()
-
-
                         <div class="form-horizontal">
 
-
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-
-
-
                             <div class="form-group">
-                               
-
+                                @Html.HiddenFor(m => m.VE_PROD, new { @id = "clave" })
+                                @Html.HiddenFor(m => m.VE_HFI, new { @id = "fhi" })
+                                @Html.HiddenFor(m => m.VE_TREG, new { @id = "tregm" })
+                                @Html.HiddenFor(m => m.VE_CLVPRO, new { @id = "clave" })
+                                @Html.HiddenFor(m => m.VE_CLVSUBPRO, new { @id = "sub" })
                             </div>
 
-                            <div class="form-group">
+
+
+
+                            <div class="col-lg-offset-3">
                                 
-                            </div>
-
-                            <div class="form-group">
-                               
+                                <input type="submit" id="cma" class="btn btn-primary" value="Aceptar">
+                                <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Cancelar</span>
                             </div>
                         </div>
-                    }
-
-                </form>
-
-
-
-
-
-                <div class="col-lg-offset-3">
-                    <input type="button" id="cma" class="btn btn-success" value="Aceptar">
-                    <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Cancelar</span>
-                </div>
-
-            </div>
+                            }
+</form>
+</div>
         </div>
     </div>
 </div>          
