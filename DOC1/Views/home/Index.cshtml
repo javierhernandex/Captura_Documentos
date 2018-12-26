@@ -82,39 +82,36 @@
                 <a href="#" class="list-group-item" id="@Html.DisplayFor(modelItem =>item.VE_ID)">
 
                     <div class="col-md-2" id="valotanq">
+                   
                         @Html.DisplayFor(modelItem => item.VE_TANQ)
 
                     </div>
                     <div class="col-md-3 nombre" id="idnombre">
-                        @Html.DisplayFor(modelItem => item.VE_NOM)
-
+                        @Html.DisplayFor(modelItem => item.VE_NOM)  
                         @Html.HiddenFor(mdoelItem => item.VE_NOM, new { @id = "nombre"})
             
                     </div>
                     <div class=" col-md-3">
                         @Html.DisplayFor(modelItem => item.VE_AUM)  litros
+                        @Html.HiddenFor(modelItem => item.VE_AUM, new { @id = "VE_AUM" })
                     </div>
                     <div>
                         @Html.DisplayFor(modelItem => item.VE_HFI)
-                        @Html.DisplayFor(modelItem => item.DATO)
+                        @Html.HiddenFor(modelItem => item.VE_HFI, new { @id = "VE_HFI" })
+                        
                     
                     </div>
                    
-                        @Html.HiddenFor(modelItem => item.DATO, new { @id = "existe" })
+                        @Html.HiddenFor(modelItem => item.DATO, new { })
 
-                        @Html.HiddenFor(modelItem => item.VE_HFI,new {@id="VE_HFI"})
+                     
 
                         @Html.HiddenFor(modelItem => item.VE_HFF,new {@id="VE_HFF" })
                         @Html.HiddenFor(modelItem => item.VE_LTRI,new {@id="VE_LTRI" })
                         @Html.HiddenFor(modelItem => item.VE_LTRF, new {@id = "VE_LTRF"})
                         @Html.HiddenFor(modelItem => item.VE_TANQ,new {@id ="VE_TANQ" })
-                        @Html.HiddenFor(modelItem => item.VE_AUM, new {@id= "VE_AUM" })
                         
-
-
-
-
-
+  
                 </a>
 
 
@@ -127,9 +124,6 @@
 
 
 
-        <div id="nom">
-
-        </div>
 
 
 
@@ -141,7 +135,6 @@
 
 
 </div>
-
 
 
 @Html.Partial("modal", new Send_Carga())

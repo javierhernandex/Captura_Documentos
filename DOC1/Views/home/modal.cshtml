@@ -49,34 +49,30 @@
 </style>
 
 
+   
 
 
+        <div class="modal fade" id="DD" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static"
+             data-keyboard="false">
+            <div class="modal-dialog  " id="mdialTamanio">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Registro</h4>
+                    </div>
 
+                    <div class="modal-body">
+@using (Html.BeginForm("dd", "home", FormMethod.Post, new { }))
+{
+    @Html.AntiForgeryToken()
 
-<div class="modal fade" id="DD" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static"
-         data-keyboard="false">
-        <div class="modal-dialog  " id="mdialTamanio">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">Registro</h4>
-                </div>
-
-                <div class="modal-body">
-
-                    <form id="loginform" class="form-horizontal" role="form" method="post">
-
-
-       @using (Html.BeginForm())
-       {
-        @Html.AntiForgeryToken()
 
 
                         <div class="form-horizontal">
 
-                         
+
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
@@ -175,12 +171,13 @@
                                     @Html.EditorFor(m => m.VE_PC, new { htmlAttributes = new { @class = "form-control", placeholder = "Precio Compra" } })
                                     @Html.ValidationMessageFor(model => model.VE_PC, "", new { @class = "text-danger" })
                                 </div>
-                                <div class="col-md-3" >
-                                    
-                                     @Html.HiddenFor(m=>m.id_list,new { @id="resultado"})
+                                <div class="col-md-3">
 
-                                  </div>
-                                
+                                    @Html.HiddenFor(m => m.id_list, new { @id = "resultado" })
+                                    @Html.HiddenFor(m=>m.VE_TREG,new { @id= "TREDD" })
+
+                                </div>
+
 
                             </div>
 
@@ -192,132 +189,24 @@
                                     @Html.ValidationMessageFor(model => model.VE_VDOC, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                       
+
 
                             <div class="form-group">
                                 <div class="col-md-offset-7 col-md-10">
-                                    
-                                    <input type="submit" id="documentar" value="Documentar" class="btn btn-primary" />
+
+                                    <input type="submit" id="documentar" value="Documentar" name="enviar"  class="btn btn-primary" />
                                     <input type="reset" class="btn btn-warning" value="Limpiar" />
                                     <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Cancelar</span>
                                 </div>
                             </div>
                         </div>
-                    }
 
-
-                    </form>
-
+}
+                    </div>
 
                 </div>
-
             </div>
         </div>
-    </div>
-
-
-<div class="modal fade" id="MA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static"
-     data-keyboard="false">
-    <div class="modal-dialog  " id="mdialTamanio">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Registro</h4>
-            </div>
-
-            <div class="modal-body">
-
-                <form id="loginform" class="form-horizontal" role="form" method="post">
-
-
-                    @using (Html.BeginForm())
-                    {
-                        @Html.AntiForgeryToken()
-
-
-                        <div class="form-horizontal">
-
-
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-
-
-
-                            <div class="form-group">
-                                <div class="col-md-3">
-
-                                    @Html.LabelFor(m => m.VE_PROD, new { @class = "control-label" })
-                                    @Html.EditorFor(m => m.VE_PROD, new { htmlAttributes = new { @class = "form-control", placeholder = "P" } })
-                                    @Html.ValidationMessageFor(model => model.VE_PROD, "", new { @class = "text-danger" })
-                                </div>
-
-                                <div class="col-md-3">
-
-                                    @Html.LabelFor(m => m.VE_CLVPRO, htmlAttributes: new { @class = "control-label" })
-                                    @Html.DropDownListFor(m => m.VE_CLVPRO,c_pro,new { @class = "form-control"  })
-                                    @Html.ValidationMessageFor(model => model.VE_CLVPRO, "", new { @class = "text-danger" })
-
-                                </div>
-                                <div class="col-md-3">
-                                        @Html.LabelFor(m => m.VE_CLVSUBPRO, htmlAttributes: new { @class = "control-label" })
-                                 
-                                        @Html.DropDownListFor(model => model.VE_CLVSUBPRO,cs_pro, new { @class = "form-control"  })
-                                        @Html.ValidationMessageFor(model => model.VE_CLVSUBPRO, "", new { @class = "text-danger" })
-                                    
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.LabelFor(m => m.VE_COCGAS, new { @class = "control-label" })
-                                    @Html.DropDownListFor(m => m.VE_COCGAS,og, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.VE_COCGAS, "", new { @class = "text-danger" })
-                                </div>
-
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-3">
-                                    @Html.LabelFor(m => m.VE_CETNGAS, new { @class = "control-label" })
-
-                                    @Html.DropDownListFor(m => m.VE_CETNGAS,gce,  new { @class = "form-control", placeholder = "Folio Recepcion"  })
-                                    @Html.ValidationMessageFor(model => model.VE_CETNGAS, "", new { @class = "text-danger" })
-                                </div>
-
-                                <div class="col-md-3">
-                                    @Html.LabelFor(m => m.VE_MARCA, new { @class = "control-label" })
-                                    @Html.EditorFor(m => m.VE_MARCA, new { htmlAttributes = new { @class = "form-control", placeholder = "Folio Documento Recepcion" } })
-                                    @Html.ValidationMessageFor(model => model.VE_MARCA, "", new { @class = "text-danger" })
-                                </div>
-                                
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-offset-9 ">
-
-                                    <input type="submit" id="documentar" value="Documentar" class="btn btn-primary" />
-                                    <input type="reset" class="btn btn-warning" value="Limpiar" />
-                                    <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Cancelar</span>
-                                </div>
-                            </div>
-                        </div>
-                    }
-
-                </form>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -404,32 +293,27 @@
                 <div>
                     <p class="text-center">¿Desea Capturar Cabecera?</p>
                 </div>
-                <form id="loginformm" class="form-horizontal" role="form" method="post">
-                    @using (Html.BeginForm())
-                    {
-                        @Html.AntiForgeryToken()
-                        <div class="form-horizontal">
+             
+@using (Html.BeginForm("MA","",FormMethod.Post, new { })) {
+    @Html.AntiForgeryToken()
+                    <div class="form-horizontal">
 
-                            <div class="form-group">
-                                @Html.HiddenFor(m => m.VE_PROD, new { @id = "clave" })
-                                @Html.HiddenFor(m => m.VE_HFI, new { @id = "fhi" })
-                                @Html.HiddenFor(m => m.VE_TREG, new { @id = "tregm" })
-                                @Html.HiddenFor(m => m.VE_CLVPRO, new { @id = "clave" })
-                                @Html.HiddenFor(m => m.VE_CLVSUBPRO, new { @id = "sub" })
-                            </div>
-
-
-
-
-                            <div class="col-lg-offset-3">
-                                
-                                <input type="submit" id="cma" class="btn btn-primary" value="Aceptar">
-                                <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Cancelar</span>
-                            </div>
+                        <div class="form-group">
+                            @Html.HiddenFor(m => m.VE_PROD, new { @id = "clave" })
+                            @Html.HiddenFor(m => m.VE_HFI, new { @id = "hfi" })
+                            @Html.HiddenFor(m => m.VE_TREG, new { @id = "tregm" })
+                            @Html.HiddenFor(m => m.VE_CLVPRO, new { @id = "clave1" })
+                            @Html.HiddenFor(m => m.VE_CLVSUBPRO, new { @id = "sub" })
                         </div>
-                            }
-</form>
-</div>
+                        <div class="col-lg-offset-3">
+
+                            <input type="submit" id="cma" value="Aceptar" name="MA" class="btn btn-primary" >
+                            <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Cancelar</span>
+                        </div>
+                    </div>
+}
+         
+            </div>
         </div>
     </div>
 </div>          

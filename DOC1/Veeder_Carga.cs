@@ -53,6 +53,6 @@ namespace DOC1
 
         public int DATO { get; set; }
 
-        public int valor { get; set; }
+        public int VE_FOLR { get; set; }
     }
 }
