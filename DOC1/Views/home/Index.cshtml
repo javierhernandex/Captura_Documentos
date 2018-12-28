@@ -27,11 +27,6 @@
 
 <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
 
-
-
-
-
-
 <hr />
 <div class="jumbotron" style="background-color:#808080">
 
@@ -39,7 +34,7 @@
 
 
     <div id="mostar">
-        <table width="100%">
+        <table  width="100%">
             <tr class="form-group">
 
                 <th class="col-md-2">
@@ -79,12 +74,13 @@
 
             @foreach (var item in Model)
             {
-                <a href="#" class="list-group-item" id="@Html.DisplayFor(modelItem =>item.VE_ID)">
-
+                <a href="#" class="list-group-item" id="@Html.DisplayFor(modelItem =>item.VE_ID)" >
+                   
+                    
                     <div class="col-md-2" id="valotanq">
                    
                         @Html.DisplayFor(modelItem => item.VE_TANQ)
-
+                        @Html.HiddenFor(modelItem=>item.VE_TANQ, new { @id =item.VE_ID+"VE_TANQ"})
                     </div>
                     <div class="col-md-3 nombre" id="idnombre">
                         @Html.DisplayFor(modelItem => item.VE_NOM)  
@@ -93,24 +89,32 @@
                     </div>
                     <div class=" col-md-3">
                         @Html.DisplayFor(modelItem => item.VE_AUM)  litros
-                        @Html.HiddenFor(modelItem => item.VE_AUM, new { @id = "VE_AUM" })
+                        @Html.HiddenFor(modelItem => item.VE_AUM, new { @id =item.VE_ID + "VE_AUM" })
                     </div>
                     <div>
                         @Html.DisplayFor(modelItem => item.VE_HFI)
-                        @Html.HiddenFor(modelItem => item.VE_HFI, new { @id = "VE_HFI" })
+                        @Html.HiddenFor(modelItem => item.VE_HFI, new { @id = item.VE_ID + "VE_HFI" })
                         
                     
                     </div>
-                   
-                        @Html.HiddenFor(modelItem => item.DATO, new { })
+                       
 
-                     
+                    @Html.HiddenFor(modelItem => item.VE_GCF, new { @id = item.VE_ID + "VE_GCF" })
 
-                        @Html.HiddenFor(modelItem => item.VE_HFF,new {@id="VE_HFF" })
-                        @Html.HiddenFor(modelItem => item.VE_LTRI,new {@id="VE_LTRI" })
-                        @Html.HiddenFor(modelItem => item.VE_LTRF, new {@id = "VE_LTRF"})
-                        @Html.HiddenFor(modelItem => item.VE_TANQ,new {@id ="VE_TANQ" })
-                        
+                       @Html.HiddenFor(modelItem=> item.VE_FOLR, new {@id =item.VE_ID+"VE_FOLR"})
+                                   
+
+                        @Html.HiddenFor(modelItem => item.VE_HFF,new {@id= item.VE_ID + "VE_HFF" })
+                        @Html.HiddenFor(modelItem => item.VE_LTRI,new {@id= item.VE_ID + "VE_LTRI" })
+                        @Html.HiddenFor(modelItem => item.VE_LTRF, new {@id = item.VE_ID + "VE_LTRF" })
+                        @Html.HiddenFor(modelItem => item.VE_TANQ,new {@id = item.VE_ID + "VE_TANQ" })
+                    @Html.HiddenFor(modelItem => item.V_clvpro, new { @id = item.VE_ID + "V_clvepro" })
+                    @Html.HiddenFor(modelItem => item.V_clvsubpro , new { @id = item.VE_ID + "V_clvsubpro" })
+                    @Html.HiddenFor(modelItem => item.V_CocGas, new { @id = item.VE_ID + "V_CocGas" })
+                    @Html.HiddenFor(modelItem => item.V_GasEtn, new { @id = item.VE_ID + "V_GasEtn" })
+                    @Html.HiddenFor(modelItem => item.V_CetnGas, new { @id = item.VE_ID + "V_CetnGas" })
+                    @Html.HiddenFor(modelItem => item.V_Otros, new { @id = item.VE_ID + "V_Otros" })
+                    @Html.HiddenFor(modelItem => item.V_Marca, new { @id = item.VE_ID + "V_Marca" })
   
                 </a>
 
@@ -121,27 +125,9 @@
         </div>
 
 
-
-
-
-
-
-
-
     </div>
-
-
-
-
 
 </div>
 
 
 @Html.Partial("modal", new Send_Carga())
-
-
-
-
-
-
-

@@ -54,5 +54,15 @@ namespace DOC1
         public int DATO { get; set; }
 
         public int VE_FOLR { get; set; }
+
+        public string V_clvpro { get; set; }
+        public string V_clvsubpro { get; set; }
+        public string V_CocGas { get; set; }
+
+        public string V_GasEtn { get; set; }
+        public string V_CetnGas { get; set; }
+        public string V_Otros { get; set; }
+        public string V_Marca { get; set; }
+
     }
 }

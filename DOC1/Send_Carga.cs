@@ -117,6 +117,7 @@ namespace DOC1
         [Display(Name = "Fecha")]
         public string fecha { get; set; }
         
+        public int documen { get; set; }
        
 
     }

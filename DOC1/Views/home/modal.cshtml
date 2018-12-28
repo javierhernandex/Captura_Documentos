@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="modal-body">
-@using (Html.BeginForm("dd", "home", FormMethod.Post, new { }))
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
@@ -110,43 +110,38 @@
 
                             <div class="form-group">
                                 <div class="col-md-3">
-                                    @Html.LabelFor(m => m.VE_FOLR, new { @class = "control-label" })
+                                   @Html.LabelFor(m => m.VE_FOLD, new { @class = "control-label" })
+                                @Html.EditorFor(m => m.VE_FOLD, new { htmlAttributes = new { @class = "form-control", placeholder = "Folio Documento Recepcion" } })
+                                @Html.ValidationMessageFor(model => model.VE_FOLD, "", new { @class = "text-danger" })
 
-                                    @Html.EditorFor(m => m.VE_FOLR, new { htmlAttributes = new { @class = "form-control", placeholder = "Folio Recepcion" } })
-                                    @Html.ValidationMessageFor(model => model.VE_FOLR, "", new { @class = "text-danger" })
                                 </div>
 
-                                <div class="col-md-3">
-                                    @Html.LabelFor(m => m.VE_FOLD, new { @class = "control-label" })
-                                    @Html.EditorFor(m => m.VE_FOLD, new { htmlAttributes = new { @class = "form-control", placeholder = "Folio Documento Recepcion" } })
-                                    @Html.ValidationMessageFor(model => model.VE_FOLD, "", new { @class = "text-danger" })
-                                </div>
                                 <div class="col-md-3">
                                     @Html.LabelFor(m => m.VE_TP, new { @class = "control-label" })
                                     @Html.DropDownListFor(m => m.VE_TP, proveedor, new { @class = "form-control", placeholder = "Folio Recepcion" })
                                     @Html.ValidationMessageFor(model => model.VE_TP, "", new { @class = "text-danger" })
                                 </div>
-
-
                                 <div class="col-md-3">
                                     @Html.LabelFor(m => m.VE_MONTO, new { @class = "control-label" })
                                     @Html.EditorFor(m => m.VE_MONTO, new { htmlAttributes = new { @class = "form-control", placeholder = "Importe en pesos" } })
                                     @Html.ValidationMessageFor(model => model.VE_MONTO, "", new { @class = "text-danger" })
                                 </div>
 
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-3 ">
+
+                                <div class="col-md-3">
                                     @Html.LabelFor(m => m.VE_PERTRA, new { @class = "control-label" })
                                     @Html.EditorFor(m => m.VE_PERTRA, new { htmlAttributes = new { @class = "form-control", placeholder = "Permiso Transporte" } })
                                     @Html.ValidationMessageFor(model => model.VE_PERTRA, "", new { @class = "text-danger" })
                                 </div>
 
-                                <div class="col-md-3">
-                                    @Html.LabelFor(m => m.VE_VEHI, new { @class = "control-label" })
-                                    @Html.EditorFor(m => m.VE_VEHI, new { htmlAttributes = new { @class = "form-control", placeholder = "Clave Vehiculo" } })
-                                    @Html.ValidationMessageFor(model => model.VE_VEHI, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 ">
+                                   @Html.LabelFor(m => m.VE_VEHI, new { @class = "control-label" })
+                                @Html.EditorFor(m => m.VE_VEHI, new { htmlAttributes = new { @class = "form-control", placeholder = "Clave Vehiculo" } })
+                                @Html.ValidationMessageFor(model => model.VE_VEHI, "", new { @class = "text-danger" })
                                 </div>
+
                                 <div class="col-md-3">
                                     @Html.LabelFor(m => m.VE_NOMPROV, new { @class = "control-label" })
                                     @Html.EditorFor(m => m.VE_NOMPROV, new { htmlAttributes = new { @class = "form-control", placeholder = "Nombre Proveedor" } })
@@ -157,25 +152,57 @@
                                     @Html.EditorFor(m => m.VE_RFC, new { htmlAttributes = new { @class = "form-control", placeholder = "R.F.C Proveedor" } })
                                     @Html.ValidationMessageFor(model => model.VE_RFC, "", new { @class = "text-danger" })
                                 </div>
+                                <div class="col-md-3">
+                                   @Html.LabelFor(m => m.VE_PERPROV, new { @class = "control-label" })
+                                @Html.EditorFor(m => m.VE_PERPROV, new { htmlAttributes = new { @class = "form-control", placeholder = "Permiso Proveedor" } })
+                                @Html.ValidationMessageFor(model => model.VE_PERPROV, "", new { @class = "text-danger" })
+                                </div>
                             </div>
 
                             <div class="form-group">
-                                <div class="col-md-3">
-                                    @Html.LabelFor(m => m.VE_PERPROV, new { @class = "control-label" })
-                                    @Html.EditorFor(m => m.VE_PERPROV, new { htmlAttributes = new { @class = "form-control", placeholder = "Permiso Proveedor" } })
-                                    @Html.ValidationMessageFor(model => model.VE_PERPROV, "", new { @class = "text-danger" })
-                                </div>
-
                                 <div class="col-md-3">
                                     @Html.LabelFor(m => m.VE_PC, new { @class = "control-label" })
                                     @Html.EditorFor(m => m.VE_PC, new { htmlAttributes = new { @class = "form-control", placeholder = "Precio Compra" } })
                                     @Html.ValidationMessageFor(model => model.VE_PC, "", new { @class = "text-danger" })
                                 </div>
+
+                                <div class="col-md-3">
+                                    
+                                </div>
                                 <div class="col-md-3">
 
-                                    @Html.HiddenFor(m => m.id_list, new { @id = "resultado" })
-                                    @Html.HiddenFor(m=>m.VE_TREG,new { @id= "TREDD" })
+                                 
+                    @Html.HiddenFor(m => m.VE_CLVPRO, new { @id = "clave" }) 
+                    @Html.HiddenFor(m => m.VE_CLVSUBPRO, new { @id = "subproducto" })
+@Html.HiddenFor(m => m.VE_COCGAS, new { @id = "cocgas" })
+@Html.HiddenFor(m => m.VE_GASETN, new { @id = "gasetn" })
+@Html.HiddenFor(m => m.VE_CETNGAS, new { @id = "cengas" })
+@Html.HiddenFor(m => m.VE_OTROS, new { @id = "otros" })
+@Html.HiddenFor(m => m.VE_MARCA, new { @id = "marca" })
+@Html.HiddenFor(m => m.VE_PROD, new { @id = "producto" })
 
+@Html.HiddenFor(m => m.VE_TANQ, new { @id = "TANQ" })
+                                    @Html.HiddenFor(m => m.VE_LTRI, new { @id = "ltri" })
+                                    @Html.HiddenFor(m => m.VE_LTRF, new { @id = "ltrf" })
+                                    @Html.HiddenFor(m => m.VE_AUM, new { @id = "aum" })
+                                    @Html.HiddenFor(m => m.VE_GCF, new { @id = "gcf" })
+                                    @Html.HiddenFor(m => m.VE_HFI, new { @id = "hfi" })
+                                    @Html.HiddenFor(m => m.VE_IDC, new { @id = "idc" })
+                                  
+
+
+
+                               <!-- MA -->
+                                    
+                                  
+                                 
+
+
+                                    @Html.HiddenFor(m=>m.documen, new {@id="docu" })
+
+                                    @Html.HiddenFor(m => m.id_list, new { @id = "resultado" })
+                                    @Html.HiddenFor(m => m.VE_TREG, new { @id = "TREDD" })
+                                    @Html.HiddenFor(m => m.VE_FOLR, new { @id = "FOLR" })
                                 </div>
 
 
@@ -207,13 +234,7 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-            
+     
                         <div class="col-md-10 col-lg-offset-10">
 
 
@@ -277,43 +298,28 @@
     </div>
 </div>            
 
-
-<div class="modal fade" id="errorma" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static"
+ <div class="modal fade" id="infoma" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static"
      data-keyboard="false">
-    <div class="modal-dialog " id="mtamaño">
+    <div class="modal-dialog " id="Tamanio">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">No se ha capturado Cabecera</h4>
+
+                <h4 class="modal-title" id="myModalLabel">No se encontro Cabecera</h4>
+
             </div>
 
             <div class="modal-body">
                 <div>
-                    <p class="text-center">¿Desea Capturar Cabecera?</p>
+                    <p>Se generara automaticamente</p>
                 </div>
-             
-@using (Html.BeginForm("MA","",FormMethod.Post, new { })) {
-    @Html.AntiForgeryToken()
-                    <div class="form-horizontal">
 
-                        <div class="form-group">
-                            @Html.HiddenFor(m => m.VE_PROD, new { @id = "clave" })
-                            @Html.HiddenFor(m => m.VE_HFI, new { @id = "hfi" })
-                            @Html.HiddenFor(m => m.VE_TREG, new { @id = "tregm" })
-                            @Html.HiddenFor(m => m.VE_CLVPRO, new { @id = "clave1" })
-                            @Html.HiddenFor(m => m.VE_CLVSUBPRO, new { @id = "sub" })
-                        </div>
-                        <div class="col-lg-offset-3">
+                <div class="col-lg-offset-1">
 
-                            <input type="submit" id="cma" value="Aceptar" name="MA" class="btn btn-primary" >
-                            <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Cancelar</span>
-                        </div>
-                    </div>
-}
-         
+                    <input type="submit" id="aceptarma" value="Aceptar" class="btn btn-primary" />
+                    <span class="btn btn-danger" , data-dismiss="modal" aria-label="close">Cancelar</span>
+                </div>
+
             </div>
         </div>
     </div>
-</div>          
+</div>
