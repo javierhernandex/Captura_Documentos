@@ -103,7 +103,7 @@ $(function  () {
                 $('#hfi').val(hfi);
                 $('#idc').val(res);
 
-
+           
 
 
 
