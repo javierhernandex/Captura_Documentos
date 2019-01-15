@@ -118,6 +118,7 @@ $(function  () {
             } else {
                 $('#FOLR').val(VE_FOLR);
                 $('#TREDD').val(tregdD);
+
                 var $myModal = $('#DD');
                 $myModal.modal('show');
 

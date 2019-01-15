@@ -127,7 +127,7 @@ namespace DOC1.Controllers
                     cmd.Parameters.AddWithValue("@VE_VEHI", 0);
                     cmd.Parameters.AddWithValue("@VE_TREG", tregma);
                     cmd.Parameters.AddWithValue("@VE_FOLR", 0);
-                    cmd.Parameters.AddWithValue("@VE_NPIP", 0);
+                    cmd.Parameters.AddWithValue("@VE_NPIP", 1);
                     cmd.Parameters.AddWithValue("@VE_NDOC", 0);
                     cmd.Parameters.AddWithValue("@VE_ENVIO", 0);
                     cmd.Parameters.AddWithValue("@VE_IDC", 0);
@@ -176,7 +176,7 @@ namespace DOC1.Controllers
 
 
 
-                    string cadena1 = "update Send_Carga set VE_FOLDR='"+FOLR+"' where VE_ID='" + FOLR + "'";
+                    string cadena1 = "update Send_Carga set VE_FOLR='"+FOLR+"' where VE_ID='" + FOLR + "'";
                     SqlCommand comando1 = new SqlCommand(cadena1, con.conectarbd);
                     int cant1;
                     cant1 = comando1.ExecuteNonQuery();
@@ -269,11 +269,52 @@ namespace DOC1.Controllers
 
 
                 } else {
+                    DateTime fecha1 = DateTime.Now;
+
+                    string fecha = fecha1.ToString("yyyy-MM-dd HH:mm:ss.fff");
+
+                    String tregdD = "DD";
+
+                    string sqldD = @"Insert into Send_Carga(VE_TANQ,VE_PROD,VE_LTRI,VE_LTRF,VE_AUM,VE_GCF,VE_TERM,VE_TDOC,VE_FDOC,VE_FOLD,VE_VDOC,VE_HFI,VE_VEHI,VE_TREG,VE_FOLR,VE_NPIP,VE_NDOC,VE_ENVIO,VE_IDC,VE_PRDO,VE_MONTO,VE_RFC,VE_NUMCSGN,VE_PC,VE_PAD,VE_PERTRA,VE_NOMPROV,VE_PERPROV,VE_TP)
+                        values(@VE_TANQ,@VE_PROD,@VE_LTRI,@VE_LTRF,@VE_AUM,@VE_GCF,@VE_TERM,@VE_TDOC,@VE_FDOC,@VE_FOLD,@VE_VDOC,@VE_HFI,@VE_VEHI,@VE_TREG,@VE_FOLR,@VE_NPIP,@VE_NDOC,@VE_ENVIO,@VE_IDC,@VE_PRDO,@VE_MONTO,@VE_RFC,@VE_NUMCSGN,@VE_PC,@VE_PAD,@VE_PERTRA,@VE_NOMPROV,@VE_PERPROV,@VE_TP)";
 
 
-           
-                    bd.Send_Carga.Add(send_Carga);
-                    bd.SaveChanges();
+                    SqlCommand cmdD = new SqlCommand(sqldD, con.conectarbd);
+                    cmdD.Parameters.AddWithValue("@VE_TANQ", 0);
+                    cmdD.Parameters.AddWithValue("@VE_PROD", 0);
+                    cmdD.Parameters.AddWithValue("@VE_LTRI", 0);
+                    cmdD.Parameters.AddWithValue("@VE_LTRF", 0);
+                    cmdD.Parameters.AddWithValue("@VE_AUM", 0);
+                    cmdD.Parameters.AddWithValue("@VE_GCF", 0);
+                    cmdD.Parameters.AddWithValue("@VE_TERM", send_Carga.VE_TERM);
+                    cmdD.Parameters.AddWithValue("@VE_TDOC", send_Carga.VE_TDOC);
+                    cmdD.Parameters.AddWithValue("@VE_FDOC", send_Carga.VE_FDOC);
+                    cmdD.Parameters.AddWithValue("@VE_FOLD", send_Carga.VE_FOLD);
+                    cmdD.Parameters.AddWithValue("@VE_VDOC", send_Carga.VE_VDOC);
+                    cmdD.Parameters.AddWithValue("@VE_HFI", 0);
+                    cmdD.Parameters.AddWithValue("@VE_VEHI", send_Carga.VE_VEHI);
+                    cmdD.Parameters.AddWithValue("@VE_TREG", tregdD);
+                    cmdD.Parameters.AddWithValue("@VE_FOLR", send_Carga.VE_FOLR);
+                    cmdD.Parameters.AddWithValue("@VE_NPIP", 0);
+                    cmdD.Parameters.AddWithValue("@VE_NDOC", 1);
+                    cmdD.Parameters.AddWithValue("@VE_ENVIO", 0);
+                    cmdD.Parameters.AddWithValue("@VE_IDC", 0);
+                    cmdD.Parameters.AddWithValue("@VE_PRDO", fecha);
+                    cmdD.Parameters.AddWithValue("@VE_MONTO", send_Carga.VE_MONTO);
+                    cmdD.Parameters.AddWithValue("@VE_RFC", send_Carga.VE_RFC);
+                    cmdD.Parameters.AddWithValue("@VE_NUMCSGN", 0);
+                    cmdD.Parameters.AddWithValue("@VE_PC", send_Carga.VE_PC);
+                    cmdD.Parameters.AddWithValue("@VE_PAD", send_Carga.VE_PAD);
+                    cmdD.Parameters.AddWithValue("@VE_PERTRA", send_Carga.VE_PERTRA);
+                    cmdD.Parameters.AddWithValue("@VE_NOMPROV", send_Carga.VE_NOMPROV);
+                    cmdD.Parameters.AddWithValue("@VE_PERPROV", send_Carga.VE_PERPROV);
+                    cmdD.Parameters.AddWithValue("@VE_TP", send_Carga.VE_TP);
+                    cmdD.ExecuteNonQuery();
+
+
+
+               //     bd.Send_Carga.Add(send_Carga);
+                 //   bd.SaveChanges();
 
                 }
 
